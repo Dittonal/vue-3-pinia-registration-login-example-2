@@ -4,7 +4,7 @@ import { useAuthStore, useAlertStore } from '@/stores';
 import { Home } from '@/views';
 import accountRoutes from './account.routes';
 import usersRoutes from './users.routes';
-
+import antdTable from '../views/antd/table.vue';
 export const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     linkActiveClass: 'active',
@@ -12,6 +12,7 @@ export const router = createRouter({
         { path: '/', component: Home },
         { ...accountRoutes },
         { ...usersRoutes },
+        { path: '/table', component: antdTable},
         // catch all redirect to home page
         { path: '/:pathMatch(.*)*', redirect: '/' }
     ]
